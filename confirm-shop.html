@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<meta name="Description" content="购物车"/>
+		<meta name="Keywords" content="购物车"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/card.css"/>
+	    <script type="text/javascript">
+	    	
+	   		document.addEventListener('plusready', function(){
+	   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+	   		});
+	   		
+	    </script>
+	</head>
+	<body>
+		<header>
+			<div class="top clearfix">
+				<div class="left back">
+					<a href="shop-card-num.html">
+						<img src="img/disclosure arrow.png"/>
+					</a>
+				</div>
+				<div class='name'>确认订单</div>
+				<div class="right">
+					<a href="login.html" class="person">
+						<img src="img/登录.png"/>
+					</a>
+					<a href="" class="share">
+						<img src="img/分享.png"/>
+					</a>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="confirm-box">
+				<ul>
+					<li class="confirm-list clearfix">
+						<div class="icon-tip">
+							<i class="iconfont icon-dingwei"></i>
+						</div>
+						<div class="address">
+							太原市管庄路口北柏林爱乐三期13号楼1单元 101室
+						</div>
+						<div class="line-to">
+							<a href="">
+								<i class="iconfont icon-jiantou"></i>
+							</a>
+						</div>
+					</li>
+					<li class="confirm-list clearfix">
+						<div class="icon-chat">
+							<i class="iconfont icon-chat51"></i>
+							<h5>留言</h5>
+						</div>
+						<div class="chat-box">
+							<textarea name="chat" rows="2" cols="30"></textarea>
+						</div>
+					</li>
+					<li class="confirm-list">
+						<div class="icon-chat pay-list clearfix">
+							<i class="iconfont icon-zhifufangshi"></i>
+							<h5>支付方式</h5>
+						</div>
+						<ul class="pay-way">
+							<li class="clearfix">
+								<h5>支付宝</h5>
+								<div class="pay">
+									<input type="radio" value="" checked="checked" id="radiusInput1" />
+									<label for="radiusInput1"></label>
+								</div>
+							</li>
+							<li class="clearfix">
+								<h5>微信</h5>
+								<div class="pay">
+									<input type="radio" value="" id="radiusInput2" />
+									<label for="radiusInput2"></label>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<footer>
+			<ul class="clearfix confirm-pay">
+				<li>总金额：<span>¥6</span></li>
+				<li><a href="pay-success.html">确认支付</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+.login-box{
+	padding:40px 0 60px 0;
+}
+.content-container{
+	padding:30px 0 0 0;
+	background:url(../img/circle.png) left top no-repeat;
+	background-size:100% 100%;
+}
+.alt-pass{
+	padding:20px 36px 0 36px;
+	width:100%;
+	text-align:right;
+	
+}
+.alt-pass a{
+	color:#888;
+}
+.third{
+	width:100%;
+	text-align:center;
+	padding:20px 0;
+	color:#D6D6D6;
+}
+.third-list{
+	width:100%;
+}
+.third-list li{
+	text-align:center;
+	float:left;
+	width:33.33%;
+}
+.third-list li a{
+	color:#D6D6D6;
+}
+.third-list li .iconfont{
+	font-size:40px;
+}
+.third-list li p{
+	padding:10px 0;
+}

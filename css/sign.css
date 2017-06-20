@@ -1,0 +1,90 @@
+section{
+	background:#fff;
+}
+.sign-box{
+	padding:40px 0 60px 0;
+}
+section .content-box{
+	padding:30px 0 0 0;
+	background:url(../img/circle2.png) left top no-repeat;
+	background-size:100% 100%;
+}
+.logo-box{
+	width:80px;
+	height:80px;
+	border-radius:50% 50%;
+	background:#fff;
+	margin:0 auto;
+	text-align:center;
+	padding:10px;
+}
+.logo-box img{
+	display:inline-block;
+	width:100% ;
+	height:auto;
+}
+.list li{
+	float:left;
+	width:50%;
+	text-align:center;
+	padding:10px 0;
+	color:#fff;
+}
+.list li a{
+	color:#fff;
+}
+form{
+	margin-top:20px;
+	background:#fff;
+}
+form div{
+	padding:10px 0 10px 30px;
+	border-bottom:1px solid #eee;	
+}
+form label,form input{
+	float:left;
+	line-height:50px;
+}
+label .iconfont{
+	font-size:24px;
+	font-weight:700;
+	color:#11873B;
+}
+input{
+	outline:none;
+	padding:0 10px;
+	font-size:16px;
+	width:160px;
+	height:50px;
+	line-height:50px;
+	border:none;
+}
+.achive{
+	margin-right:30px;
+	padding:0 4px;
+	text-align:center;
+	float:right;
+	line-height:30px;
+	font-size:12px;
+	border-radius:6px;
+	margin-top:10px;
+	border:1px solid #fdb242;
+}
+.form-list:last-child{
+	border-bottom:none;	
+}
+.sign-button{
+	width:80%;
+	margin:20px auto 0 auto;
+	background:#11873B;
+	color:#fff;
+	font-weight:700;
+	font-size:16px;
+	line-height:30px;
+	text-align:center;
+	border-radius:16px;
+	padding-left:0;
+}
+.sign-button a{
+	color:#fff;
+}
