@@ -17,11 +17,15 @@ $(document).ready(function(){
       });
     $(".shop-img a").on("click",function(){
         $(this).parents("li").find(".alert-box").show();
+        $(this).parents(".content").addClass("shadow");
+        window.onmousewheel=function(){return false};
         return false;
     });
 
     $(".close").on("click",function(){
         $(this).parents(".alert-box").hide();
+        $(this).parents(".content").removeClass("shadow");
+        window.onmousewheel=function(){return true};
     });
 
     // 点击加减按钮对应的商品进行加减

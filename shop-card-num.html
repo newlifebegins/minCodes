@@ -40,9 +40,9 @@
 			<div class="card-bar">
 				<div class="title">您已选择的商品</div>
 				<ul>
-					<li class="shop-detail clearfix active">
+					<li class="shop-detail clearfix">
 						<div class="check-box">
-							<input type="checkbox" checked="checked" id="checkboxFourInput1" />
+							<input type="checkbox" id="checkboxFourInput1" />
 							<label for="checkboxFourInput1"></label>
 						</div>
 						<div class="card-img">
@@ -55,7 +55,7 @@
 							哇哈哈血橙橙汁饮品 450ml/瓶
 						</dt>
 							<dd class="price">
-								¥3
+								¥<span>3</span>
 							</dd>
 							<dd class="count">
 								<img src="img/关闭.png" />
@@ -90,7 +90,7 @@
 							哇哈哈血橙橙汁饮品 450ml/瓶
 						</dt>
 							<dd class="price">
-								¥3
+								¥<span>3</span>
 							</dd>
 							<dd class="count">
 								<img src="img/关闭.png" />
@@ -125,7 +125,7 @@
 							哇哈哈血橙橙汁饮品 450ml/瓶
 						</dt>
 							<dd class="price">
-								¥3
+								¥<span>3</span>
 							</dd>
 							<dd class="count">
 								<img src="img/关闭.png" />
@@ -160,7 +160,7 @@
 							哇哈哈血橙橙汁饮品 450ml/瓶
 						</dt>
 							<dd class="price">
-								¥3
+								¥<span>3</span>
 							</dd>
 							<dd class="count">
 								<img src="img/关闭.png" />
@@ -195,7 +195,7 @@
 							哇哈哈血橙橙汁饮品 450ml/瓶
 						</dt>
 							<dd class="price">
-								¥3
+								¥<span>3</span>
 							</dd>
 							<dd class="count">
 								<img src="img/关闭.png" />
@@ -260,18 +260,71 @@
 		<script src="js/jquery-3.1.0.js" type="text/javascript"></script>
 		<!-- <script src="js/index.js" type="text/javascript"></script> -->
 		<script>
-			$(".total .all").on("click",function(){
-				if($(this).siblings("input[type='checkbox']").is(':checked')){
-					$(".card-bar ul li").each(function(i,v){
-						$(v).removeClass("active").find("input[type='checkbox']").removeAttr("checked");
-					});
-				}else{
-					$(".card-bar ul li").each(function(i,v){
-						$(v).addClass("active").find("input[type='checkbox']").attr("checked","true");
-					});
+			$(".total-num").find("span").html($(".card-bar").find("label.on").length);
+			function total(){
+				var str = 0;
+				if($(".card-bar").find("label.on").parents("li").find(".price").html()){
+					str = $(".card-bar").find("label.on").parents("li").find(".price span").html()*$(".card-bar").find("label.on").parents("li").find(".count span").html();
 				}
+				console.log(str);
+				$(".total-price").find("span").html('￥'+str);
+			};
+			total();
 
-			});
+			// $(".total .all").on("click",function(){
+			// 	if($(this).siblings("input[type='checkbox']").is(':checked')){
+			// 		$(".card-bar ul li").each(function(i,v){
+			// 			$(v).find("input[type='checkbox']").removeAttr("checked");
+			// 		});
+			// 	}else{
+			// 		$(".card-bar ul li").each(function(i,v){
+			// 			$(v).find("input[type='checkbox']").attr("checked","true");
+			// 		});
+			// 	}
+			// 	$(".total-num").find("span").html($(".card-bar").find("label.on").length);
+
+			// });
+
+			$(".check-box input").on("click",function(){
+				$(this).attr("checked", true).siblings("label").toggleClass("on");
+				$(".total-num").find("span").html($(".card-bar").find("label.on").length);
+				total();
+			})
+
+				// 全选
+				var flag = false;
+				$(".total .all").click(function () {
+					// console.log($(this).siblings("input[type='checkbox']").attr("checked"));
+
+					// console.log(flag);
+
+					if(!flag){
+						$(".card-bar ul li").find("input[type='checkbox']").each(function () {
+							$(this).attr("checked", true).siblings("label").addClass("on");
+							// $(this).next().css({ "background-color": "#3366cc", "color": "#ffffff" });
+
+						});
+						flag = true;
+						// GetCount();
+
+					}else{
+						$(".card-bar ul li").find("input[type='checkbox']").each(function () {
+							// if ($(this).attr("checked")) {
+								$(this).attr("checked", false).siblings("label").removeClass("on");
+								//$(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+							// } else {
+								// $(this).attr("checked", true).siblings("label").addClass("on");
+								//$(this).next().css({ "background-color": "#3366cc", "color": "#000000" });
+							// }
+						});
+						flag = false;
+						// GetCount();
+
+			   		}
+			   		$(".total-num").find("span").html($(".card-bar").find("label.on").length);
+			   		total();
+
+				});
 		</script>
 	</body>
 

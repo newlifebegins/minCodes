@@ -31,7 +31,7 @@ section .card-bar{
 	border-radius: 50%;
 }
 
-.check-box input[type='checkbox']:checked+label:before {
+.check-box label.on:before {
 	content: "\2713";
 	font-size: 15px;
 	color: #fff;
@@ -90,7 +90,7 @@ section .card-bar{
 	width:35%;
 	background:#f5f5f5;
 	padding:14px 0 14px 10px;
-	
+
 }
 .check-boxs input[type="checkbox"]{
 	display:none;
@@ -181,7 +181,7 @@ section .card-bar{
 	text-align:center;
 	background:#919191;
 	color:#fff;
-	
+
 }
 .confirm-box{
 	padding:40px 0 120px 0;
@@ -221,12 +221,12 @@ section .card-bar{
 	float:left;
 	width:30%;
 	margin-top:30px;
-	
+
 }
 .icon-chat i,.icon-chat h5{
 	float:left;
 	margin-top:8px;
-	
+
 }
 .icon-chat h5{
 	margin-left:6px;
@@ -241,7 +241,7 @@ section .card-bar{
 	padding:10px;
 	float:left;
 	width:70%;
-	
+
 }
 .chat-box textarea{
 	height:80px;
@@ -253,7 +253,7 @@ section .card-bar{
 .pay-list{
 	width:100%;
 	margin-top:0;
-} 
+}
 .pay-way li{
 	width:100%;
 	padding:10px;
@@ -334,7 +334,7 @@ footer .confirm-pay li:last-child{
 }
 @media only screen and (max-width: 320px){
 	.card-list dl{
-		white-space:wrap; 
+		white-space:wrap;
 		/*overflow:hidden; text-overflow:ellipsis;*/
 	}
 	.shop-detail dl dd.count{
