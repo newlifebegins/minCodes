@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".aside-box .arrow").on("click",function(){
-        $(".aside-btn").fadeIn();
+        $(".aside-btn").fadeToggle();
     });
     document.addEventListener('click',function (e) {
        var parent = $(e.target).parents('.aside-btn,.aside-box');
