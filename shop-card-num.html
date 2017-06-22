@@ -263,9 +263,14 @@
 			$(".total-num").find("span").html($(".card-bar").find("label.on").length);
 			function total(){
 				var str = 0;
-				if($(".card-bar").find("label.on").parents("li").find(".price").html()){
-					str = $(".card-bar").find("label.on").parents("li").find(".price span").html()*$(".card-bar").find("label.on").parents("li").find(".count span").html();
-				}
+				$(".card-bar").find("label.on").parents("li").each(function(i,v){
+					if($(v).find(".price").html()){
+						str += $(v).find(".price span").html()*$(v).find(".count span").html();
+					}
+				});
+				// if($(".card-bar").find("label.on").parents("li").find(".price").html()){
+				// 	str = $(".card-bar").find("label.on").parents("li").find(".price span").html()*$(".card-bar").find("label.on").parents("li").find(".count span").html();
+				// }
 				console.log(str);
 				$(".total-price").find("span").html('￥'+str);
 			};
