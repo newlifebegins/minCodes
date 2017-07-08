@@ -69,8 +69,8 @@
                     -->
 						<div class="num-controls">
 							<ul class="num-control">
-								<li>+</li>
-								<li>-</li>
+								<li class="add">+</li>
+								<li class="min">-</li>
 							</ul>
 							<div class="del">删除</div>
 						</div>
@@ -104,8 +104,8 @@
                     -->
 						<div class="num-controls">
 							<ul class="num-control">
-								<li>+</li>
-								<li>-</li>
+								<li class="add">+</li>
+								<li class="min">-</li>
 							</ul>
 							<div class="del">删除</div>
 						</div>
@@ -139,8 +139,8 @@
                     -->
 						<div class="num-controls">
 							<ul class="num-control">
-								<li>+</li>
-								<li>-</li>
+								<li class="add">+</li>
+								<li class="min">-</li>
 							</ul>
 							<div class="del">删除</div>
 						</div>
@@ -174,8 +174,8 @@
                     -->
 						<div class="num-controls">
 							<ul class="num-control">
-								<li>+</li>
-								<li>-</li>
+								<li class="add">+</li>
+								<li class="min">-</li>
 							</ul>
 							<div class="del">删除</div>
 						</div>
@@ -209,8 +209,8 @@
                     -->
 						<div class="num-controls">
 							<ul class="num-control">
-								<li>+</li>
-								<li>-</li>
+								<li class="add">+</li>
+								<li class="min">-</li>
 							</ul>
 							<div class="del">删除</div>
 						</div>
@@ -330,9 +330,26 @@
 			   		total();
 
 				});
-				$(".shop-detail").on("touchmove",function(e){
+				$(".shop-detail dl").on("touchmove",function(e){
 					e.preventDefault();
-					$(this).addClass('active');
+					$(this).parents(".shop-detail").addClass('active');					
+				});
+				var num = 1;
+				$(".shop-detail").find('.num-controls .add').on("click",function(){
+					num ++;
+					$(this).parents(".shop-detail").find('.count span').html(num);
+					total();
+				});
+				$(".shop-detail").find('.num-controls .min').on("click",function(){
+					num --;
+					if(num == 0)num = 1;
+					$(this).parents(".shop-detail").find('.count span').html(num);
+					total();
+				});
+				$(".shop-detail").find('.num-controls .del').on("click",function(){
+					$(this).parents(".shop-detail").remove();
+					$(".total-num").find("span").html($(".card-bar").find("label.on").length);
+					total();
 				});
 		</script>
 	</body>
