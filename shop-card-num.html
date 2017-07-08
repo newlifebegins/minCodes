@@ -331,13 +331,13 @@
 
 				});
 				var startX = null,startY = null,endX = null,endY = null;
-				$(".shop-detail dl").on("touuchstart",function(e){
-					e.preventDefault();
+				$(".shop-detail dl").on("touchstart",function(e){
+					// e.preventDefault();
 					startX = e.originalEvent.changedTouches[0].pageX,
 					startY = e.originalEvent.changedTouches[0].pageY;
 				});
 				$(".shop-detail dl").on("touchmove",function(e){
-					e.preventDefault();
+					// e.preventDefault();
 					endX = e.originalEvent.changedTouches[0].pageX,
 					endY = e.originalEvent.changedTouches[0].pageY;
 					X = endX - startX;
