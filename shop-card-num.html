@@ -330,9 +330,21 @@
 			   		total();
 
 				});
+				var startX = null,startY = null,endX = null,endY = null;
+				$(".shop-detail dl").on("touuchstart",function(e){
+					e.preventDefault();
+					startX = e.originalEvent.changedTouches[0].pageX,
+					startY = e.originalEvent.changedTouches[0].pageY;
+				});
 				$(".shop-detail dl").on("touchmove",function(e){
 					e.preventDefault();
-					$(this).parents(".shop-detail").addClass('active');					
+					endX = e.originalEvent.changedTouches[0].pageX,
+					endY = e.originalEvent.changedTouches[0].pageY;
+					X = endX - startX;
+					Y = endY - startY;
+					if(Math.abs(X) > Math.abs(Y) && X > 0){
+						$(this).parents(".shop-detail").addClass('active');	
+					}									
 				});
 				var num = 1;
 				$(".shop-detail").find('.num-controls .add').on("click",function(){
